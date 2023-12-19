@@ -11,6 +11,6 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Societe {
-    @Id
+    @Id aaa
     private String id;
 }
