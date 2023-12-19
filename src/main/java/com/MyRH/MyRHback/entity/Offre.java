@@ -1,8 +1,10 @@
 package com.MyRH.MyRHback.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import com.MyRH.MyRHback.enums.NiveauEtude;
+import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @Entity
 @Data
@@ -12,5 +14,19 @@ import lombok.*;
 @NoArgsConstructor
 public class Offre {
     @Id
-    private String id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
+    private String titre;
+    private String description;
+    private String profile;
+    private float salaire;
+    private NiveauEtude niveau_etude;
+
+    @OneToMany(mappedBy="offre")
+    private List<Postule> postule;
+
+    @ManyToOne
+    @JoinColumn(name = "offreId" ,referencedColumnName = "id")
+    private Societe societe;
+
 }

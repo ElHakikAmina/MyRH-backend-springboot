@@ -1,8 +1,9 @@
 package com.MyRH.MyRHback.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @Entity
 @Getter
@@ -11,6 +12,15 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Societe {
-    @Id aaa
+    @Id
+    @GeneratedValue(strategy =  GenerationType.AUTO)
     private String id;
+
+    private String email;
+    private String password;
+    private String adresse;
+    private String image;
+
+    @OneToMany(mappedBy = "societe")
+    private List<Offre> offre;
 }

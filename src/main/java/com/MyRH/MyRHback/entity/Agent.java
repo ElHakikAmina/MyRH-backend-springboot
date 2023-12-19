@@ -11,6 +11,11 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Agent {
+
     @Id
-    private String id;
+    private String email;
+
+    private String password;
+
+
 }

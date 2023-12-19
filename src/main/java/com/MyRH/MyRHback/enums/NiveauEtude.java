@@ -1,4 +1,4 @@
-package com.MyRH.MyRHback.entity;
+package com.MyRH.MyRHback.enums;
 
 public enum NiveauEtude {
     NIVEAU_BAC,

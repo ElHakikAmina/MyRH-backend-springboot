@@ -1,11 +1,13 @@
 package com.MyRH.MyRHback.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -13,5 +15,14 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Postule {
     @Id
-    private String id;
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    private int id;
+
+    private String nom_complet;
+     private String cv;
+     private int tel;
+     private String motivation;
+     @ManyToOne
+    private Offre offre;
+
 }
