@@ -1,7 +1,7 @@
 package com.MyRH.MyRHback.service.ServiceInterface;
 
+import com.MyRH.MyRHback.entity.Societe;
+
 public interface SocieteService {
-    //boolean login(String email,String password);
-    //Societe Create(Societe societe);
-    //List<Postule> consulte(Postule postule);
+    Societe create(Societe societe);
 }

@@ -13,9 +13,8 @@ import java.util.List;
 @NoArgsConstructor
 public class Societe {
     @Id
-    @GeneratedValue(strategy =  GenerationType.AUTO)
-    private String id;
-
+    @GeneratedValue(strategy =  GenerationType.IDENTITY)
+    private int id;
     private String email;
     private String password;
     private String adresse;
