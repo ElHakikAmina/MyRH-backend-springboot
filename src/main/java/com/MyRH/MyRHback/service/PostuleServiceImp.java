@@ -1,4 +1,7 @@
 package com.MyRH.MyRHback.service;
 
-public class PostuleServiceImp {
+import com.MyRH.MyRHback.service.ServiceInterface.PostuleService;
+
+public class PostuleServiceImp implements PostuleService {
+
 }
