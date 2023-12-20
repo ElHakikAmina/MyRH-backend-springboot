@@ -21,16 +21,16 @@ public class AgentController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody Map<String, String> loginData) {
+    public ResponseEntity<Agent> login(@RequestBody Map<String, String> loginData) {
         String email = loginData.get("email");
         String password = loginData.get("password");
 
         Agent agent = agentService.login(email, password);
 
         if (agent != null) {
-            return ResponseEntity.ok("Login successful!");
+            return ResponseEntity.ok(agent);
         } else {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials!");
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(new Agent());
         }
     }
 }
